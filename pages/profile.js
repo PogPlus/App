@@ -1,6 +1,6 @@
 import HeaderNav from '../components/Navbar'
 
-import { useSession } from 'next-auth'
+import { useSession } from 'next-auth/client'
 
 export default function Profile() {
     const [ session, loading ] = useSession()

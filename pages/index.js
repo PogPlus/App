@@ -3,18 +3,22 @@ import HeaderNav from '../components/Navbar'
 import Post from '../components/Post'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Axios from 'axios'
 export default function Home() {
+
+  const postList = Axios.get('http://localhost:4000/api/posts').then(res => {
+      return res.data.data.map(function(post, i) {
+        console.log(post)
+        return <Post title={post.title} _id={post._id} image={post.image}/>
+      })
+    })
+
   return (
     <>
       <ToastContainer />
       <HeaderNav />
-      <Container className="container" style={{ backgroundColor: "#201f22", height: "100%", display: 'flex', justifyContent: 'center' }}>
-        <Post title="pog" _id="yesrandomlettershere" image="https://cdn.discordapp.com/attachments/715332913419255868/784990721677328394/FullSizeRender.png" user={{ _id: "HDkjSHdkJ", username: "bruh moment" }}/>
-
-        <Post title="pog" _id="yesrandomlettershere" image="https://cdn.discordapp.com/attachments/715332913419255868/784990721677328394/FullSizeRender.png" user={{ _id: "HDkjSHdkJ", username: "bruh moment" }}/>
-
-        <Post title="pog" _id="yesrandomlettershere" image="https://cdn.discordapp.com/attachments/715332913419255868/784990721677328394/FullSizeRender.png" user={{ _id: "HDkjSHdkJ", username: "bruh moment" }}/>
+      <Container style={{ backgroundColor: "#201f22", height: "100%", display: 'flex', justifyContent: 'center' }}>
+        {postList}
       </Container>
     </>
   )

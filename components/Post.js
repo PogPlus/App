@@ -53,7 +53,7 @@ export default function Post(props) {
                     <Button variant="link" onClick={() => downvote(props._id)}><img src="notpog.png" style={{ width: "50px", height: "50px" }} size="sm"/></Button>    
                 </div>
             </div>
-            <p class="votes" id="votes"> votes</p>
+            <p className="votes" id="votes"> votes</p>
         </Card.Body>
     </Card>
 }
