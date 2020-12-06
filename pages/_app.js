@@ -1,7 +1,11 @@
+import { useSession } from 'next-auth/client'
 import Head from 'next/head'
 import '../styles/globals.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Spinner } from 'react-bootstrap'
 
 export default function MyApp({ Component, pageProps }) {
+  const [ session, loading ] = useSession()
   return (
     <>
       <Head>
@@ -11,9 +15,9 @@ export default function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
-        <meta name="description" content="Description" />
-        <meta name="keywords" content="Keywords" />
-        <title>Next.js PWA Example</title>
+        <meta name="description" content="PogPlus is a meme sharing website." />
+        <meta name="keywords" content="meme,website,reddit,ifunny,image" />
+        <title>PogPlus</title>
 
         <link rel="manifest" href="/manifest.json" />
         <link
@@ -29,7 +33,7 @@ export default function MyApp({ Component, pageProps }) {
           sizes="32x32"
         />
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
-        <meta name="theme-color" content="#317EFB" />
+        <meta name="theme-color" content="#FCF7F8" />
       </Head>
       <Component {...pageProps} />
     </>
