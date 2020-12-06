@@ -7,6 +7,10 @@
   align-items: center;
 }
 
+.container > div {
+  padding: 25px;
+}
+
 .main {
   padding: 5rem 0;
   flex: 1;

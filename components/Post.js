@@ -41,7 +41,7 @@ export default function Post(props) {
         })
     }
 
-    return <Card style={{ width: '50%', borderRadius: "8px", marginTop: '32px' }} key={props.key}>
+    return <Card style={{ margin: '10px', width: '50%', borderRadius: "8px", marginTop: '32px' }} key={props.key}>
         <Card.Img variant="top" src={props.image} />
         <Card.Body>
             <div className="votes-container" style={{ alignItems: 'center', display: 'flex', justifyContent: 'space-between' }}>
@@ -50,7 +50,7 @@ export default function Post(props) {
                 </div>
                 <div>
                     <Button variant="link" onClick={() => upvote(props._id)}><img src="verypog.png" style={{ width: "50px", height: "50px" }} size="sm"/></Button>
-                    <Button variant="link" onClick={() => downvote(props._id)}><img src="notpog.png" style={{ width: "50px", height: "50px" }} size="sm"/></Button>    
+                    <Button variant="link" onClick={() => downvote(props._id)}><img src="notpog.png" style={{ width: "50px", height: "50px" }} size="sm"/></Button>
                 </div>
             </div>
             <p className="votes" id="votes"> votes</p>
