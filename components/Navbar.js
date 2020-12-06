@@ -3,7 +3,6 @@ import { useSession, signIn, signOut } from "next-auth/client";
 
 import Link from 'next/link';
 
-
 export default function HeaderNav() {
     const [ session, loading ] = useSession()
     return (
