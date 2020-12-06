@@ -18,7 +18,8 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.13.1",
-    "react-toastify": "^6.1.0"
+    "react-toastify": "^6.1.0",
+    "use-async-memo": "^1.2.2"
   },
   "license": "MIT"
 }
